@@ -30,12 +30,18 @@ def busfine_driver_score_download_f(driver, select_start_date, select_end_date, 
     inquire_bth.click()
     driver.implicitly_wait(10)
 
+    time.sleep(5)
+    check_bth = driver.find_element(By.CLASS_NAME, "check")
+    driver.implicitly_wait(10)
+    check_bth.click()
+    driver.implicitly_wait(10)
+
 
     download_bth = driver.find_element(By.CLASS_NAME, "btn.btn_darkblue.btn_down")
     driver.implicitly_wait(10)
     download_bth.click()
     driver.implicitly_wait(10)
-    
+
     try:
         approve = Alert(driver)
         approve.accept()

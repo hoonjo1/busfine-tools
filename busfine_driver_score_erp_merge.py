@@ -19,5 +19,5 @@ def busfine_driver_score_erp_merge_f(company, dates):
 
     result = pd.merge(read_busfine_data, del_erp_data_f, on=["운행일", "차량번호", "오전/오후"], how="outer")
     result.dropna(subset=["업체명"], inplace=True)
-    result.to_csv(rf"\\kjnas\KJNAS\1.기획부\9.개발팀\BUSFINE_DRIVER_SCORE_ERP_MERGE\{company}_{dates[0]}_{dates[1]}_BUSFINE_DRIVING_SCORE_ERP_MERGE.csv", encoding="euc-kr")
+    result.to_csv(rf"\\kjnas\KJNAS\1.기획부\9.개발팀\BUSFINE_DRIVER_SCORE_ERP_MERGE\{company}_{dates[0]}_{dates[-1]}_BUSFINE_DRIVING_SCORE_ERP_MERGE.csv", encoding="euc-kr")
     print("ALL_COMPLETE")
